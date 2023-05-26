@@ -5,37 +5,37 @@ resource "aws_vpc" "infrastructure_vpc" {
   instance_tenancy     = "default"
 
   tags = {
-    Name = "asg-architecture-vpc"
+    Name = "asg-vpc"
   }
 }
 
 #It enables our vpc to connect to the internet
-resource "aws_internet_gateway" "tier_architecture_igw" {
+resource "aws_internet_gateway" "infrastructure_igw" {
   vpc_id = aws_vpc.infrastructure_vpc.id
   tags = {
-    Name = "2-tier-architecture-igw"
+    Name = "asg-igw"
   }
 }
 
-#first ec2 instance public subnet
-resource "aws_subnet" "ec2_1_public_subnet" {
+#first public subnet
+resource "aws_subnet" "first_public_subnet" {
   vpc_id                  = aws_vpc.infrastructure_vpc.id
   cidr_block              = var.subnet_cidrs[1]
   map_public_ip_on_launch = "true" //it makes this a public subnet
   availability_zone       = var.availability_zone[1]
   tags = {
-    Name = "first ec2 public subnet"
+    Name = "first public subnet"
   }
 }
 
-#second ec2 instance public subnet
-resource "aws_subnet" "ec2_2_public_subnet" {
+#second public subnet
+resource "aws_subnet" "second_public_subnet" {
   vpc_id                  = aws_vpc.infrastructure_vpc.id
-  cidr_block              = var.subnet_cidrs[2]
+  cidr_block              = var.subnet_cidrs[0]
   map_public_ip_on_launch = "true" //it makes this a public subnet
-  availability_zone       = var.availability_zone[2]
+  availability_zone       = var.availability_zone[0]
   tags = {
-    Name = "second ec2 public subnet"
+    Name = "second public subnet"
   }
 }
 

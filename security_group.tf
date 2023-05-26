@@ -1,17 +1,15 @@
-resource "aws_security_group" "terramino_instance" {
-  name = "learn-asg-terramino-instance"
-  ingress {
-    from_port       = 80
-    to_port         = 80
-    protocol        = "tcp"
-    cidr_blocks     = ["0.0.0.0/0"]
-  }
+resource "aws_security_group" "instance_sg" {
+  name = "asg-instance-sg"
 
-  ingress {
-    from_port       = 22
-    to_port         = 22
-    protocol        = "tcp"
-    cidr_blocks     = ["0.0.0.0/0"]
+   # dynamic block who create two rules to allow inbound traffic 
+  dynamic "ingress" {
+    for_each = var.inbound_ec2
+    content {
+      from_port   = ingress.value
+      to_port     = ingress.value
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
   }
 
   egress {
@@ -24,8 +22,8 @@ resource "aws_security_group" "terramino_instance" {
   vpc_id = aws_vpc.infrastructure_vpc.id
 }
 
-resource "aws_security_group" "terramino_lb" {
-  name = "learn-asg-terramino-lb"
+resource "aws_security_group" "alb_sg" {
+  name = "asg-alb-sg"
   ingress {
     from_port   = 80
     to_port     = 80

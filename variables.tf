@@ -1,4 +1,4 @@
-variable "inbound_port_production_ec2" {
+variable "inbound_ec2" {
   type        = list(any)
   default     = [22, 80]
   description = "inbound port allow on production instance"
@@ -21,7 +21,7 @@ variable "key_name" {
 
 variable "availability_zone" {
   type    = list(string)
-  default = ["eu-north-1a", "eu-north-1b", "eu-north-1c"]
+  default = ["eu-north-1a", "eu-north-1b"]
 }
 
 variable "vpc_cidr" {
@@ -32,10 +32,5 @@ variable "vpc_cidr" {
 variable "subnet_cidrs" {
   type        = list(string)
   description = "list of all cidr for subnet"
-  default     = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-}
-
-variable "target_application_port" {
-  type    = string
-  default = "80"
+  default     = ["10.0.1.0/24", "10.0.2.0/24"]
 }
