@@ -11,6 +11,8 @@ Before we begin, make sure you have the following prerequisites in place:
 - An AWS account with appropriate permissions to create and manage resources.
 - Terraform installed on your local machine. You can download it from the official Terraform website and follow the installation instructions for your operating system.
 
+## Auto Scaling Group (ASG)
+
 Before we dive into the deployment of our infrastructure, let's take a moment to understand the concept of an Auto Scaling Group (ASG) and its role in ensuring the availability and scalability of our applications.
 
 ### What is an Auto Scaling Group?
