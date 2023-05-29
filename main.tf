@@ -13,7 +13,7 @@ resource "aws_launch_template" "instances_configuration" {
   tags = {
     Name = "asg-instance"
   }
-  
+
 }
 
 resource "aws_autoscaling_group" "asg" {
@@ -28,6 +28,11 @@ resource "aws_autoscaling_group" "asg" {
     id      = aws_launch_template.instances_configuration.id
     version = "$Latest"
   }
+
+  # termination_policies = [
+  #   "OldestInstance",
+  #   "ClosestToNextInstanceHour"
+  # ]
 }
 
 resource "aws_autoscaling_policy" "avg_cpu_policy_greater" {
