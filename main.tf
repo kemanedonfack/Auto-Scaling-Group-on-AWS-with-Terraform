@@ -29,10 +29,6 @@ resource "aws_autoscaling_group" "asg" {
     version = "$Latest"
   }
 
-  # termination_policies = [
-  #   "OldestInstance",
-  #   "ClosestToNextInstanceHour"
-  # ]
 }
 
 resource "aws_autoscaling_policy" "avg_cpu_policy_greater" {
