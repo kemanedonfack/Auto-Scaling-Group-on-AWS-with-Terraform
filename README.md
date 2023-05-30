@@ -353,3 +353,11 @@ sudo apt install stress -y
 
 The `install_script.sh` file is a Bash script that contains a series of commands to be executed on the EC2 instances when they are launched. A script that updates the package repository, installs Nginx, configures it to start on boot, and starts the service. It then Retrieves the availability zone of the EC2 instance using the instance metadata service and Creates an HTML file with a customized message that includes the availability zone and hostname of the EC2 instance. The file is saved in the default Nginx web server document root directory. And finaly installs the stress testing tool, which can be used to simulate high CPU usage on the EC2 instance.
 
+Create a file named `outputs.tf` with the following content:
+
+```
+output "application_endpoint" {
+  value = aws_lb.alb.dns_name
+}
+```
+
