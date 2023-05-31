@@ -2,17 +2,17 @@
 
 ## Introduction
 
-In today's digital landscape, building highly available and scalable infrastructure is crucial for ensuring the reliability and performance of applications. Amazon Web Services (AWS) provides a comprehensive suite of cloud services that enable organizations to build resilient and elastic environments. In this article, we will explore how to set up a highly available infrastructure on AWS using Terraform, a popular infrastructure-as-code tool.
+In today's digital landscape, building `highly available` and `scalable` infrastructure is crucial for ensuring the `reliability` and `performance` of applications. **Amazon Web Services (AWS)** provides a comprehensive suite of cloud services that enable organizations to build `resilient` and `elastic` environments. In this article, we will explore how to set up a highly available infrastructure on AWS using **Terraform**, a popular infrastructure-as-code tool.
 
 ![FeaturedImage](./images/Auto%20Scaling%20Group%20on%20AWS%20with%20Terraform.png)
 
 ## Auto Scaling Group (ASG)
 
-Before we dive into the deployment of our infrastructure, let's take a moment to understand the concept of an Auto Scaling Group (ASG) and its role in ensuring the availability and scalability of our applications.
+Before we dive into the deployment of our infrastructure, let's take a moment to understand the concept of an **Auto Scaling Group (ASG)** and its role in ensuring the availability and scalability of our applications.
 
 ### What is an Auto Scaling Group?
 
-An Auto Scaling Group is a fundamental component of AWS that allows you to automatically adjust the number of instances based on demand. It helps maintain application availability, distribute traffic evenly, and optimize resource utilization.
+An [Auto Scaling Group](https://aws.amazon.com/autoscaling/) is a fundamental component of AWS that allows you to automatically adjust the number of instances based on demand. It helps maintain application availability, distribute traffic evenly, and optimize resource utilization.
 
 When you configure an Auto Scaling Group, you define parameters such as the minimum and maximum number of instances to keep running, desired capacity, and scaling policies. AWS then automatically manages the instances, launching new ones or terminating existing ones as needed, based on the defined policies.
 
