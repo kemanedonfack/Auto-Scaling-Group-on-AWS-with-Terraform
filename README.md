@@ -55,7 +55,7 @@ Create a file named `provider.tf` with the following content:
 
 ```
 provider "aws" {
-  region = "eu-north-1"
+  region = "ca-central-1"
 }
 
 terraform {
@@ -81,22 +81,22 @@ variable "inbound_ec2" {
 
 variable "instance_type" {
   type    = string
-  default = "t3.micro"
+  default = "t2.micro"
 }
 
 variable "ami" {
   type    = string
-  default = "ami-08766f81ab52792ce"
+  default = "ami-0940df33750ae6e7f"
 }
 
 variable "key_name" {
   type    = string
-  default = "kemane"
+  default = "wordpressKey"
 }
 
 variable "availability_zone" {
   type    = list(string)
-  default = ["eu-north-1a", "eu-north-1b"]
+  default = ["ca-central-1a", "ca-central-1b"]
 }
 
 variable "vpc_cidr" {
@@ -363,4 +363,65 @@ output "application_endpoint" {
   value = aws_lb.alb.dns_name
 }
 ```
+
+### Step 6: Deployment
+
+To start the deployment process, we need to initialize Terraform in our project directory. This step ensures that Terraform downloads the necessary providers and sets up the backend configuration. Run the following command in your terminal:
+
+```
+terraform init
+```
+
+![terraform-init](./images/terraform-init.png)
+
+After initializing Terraform, we can generate an execution plan to preview the changes that will be made to our AWS infrastructure. The plan provides a detailed overview of the resources that will be created, modified, or destroyed.
+
+To generate the plan, execute the following command:
+```
+terraform plan
+```
+
+![terraform-plan](./images/terraform-plan.png)
+
+Once we are satisfied with the execution plan, we can proceed with deploying our infrastructure on AWS. Terraform will provide the necessary resources and configure them according to our specifications.
+
+To deploy the infrastructure, run the following command:
+
+```
+terraform apply
+```
+
+Terraform will prompt for confirmation before proceeding with the deployment. Type `yes` and press Enter to continue.
+The deployment process will take some time. Terraform will display the progress and status of each resource being created.
+
+![terraform-apply](./images/terraform-apply.png)
+
+Once the deployment is complete, Terraform will output the application load balancer dns name.
+
+![outputs](./images/output.png)
+
+Finally, let's check our infrastructure from the AWS Console:
+
+![instance](./images/instances.png)
+
+![asg](./images/asg.png)
+
+![result](./images/result1.png)
+
+![result](./images/result2.png)
+
+Now that our infrastructure is ready, let's test our Auto Scaling Group to see if it works as expected. To do this, connect via ssh to one of the two instances and type the command below: 
+
+```
+stress -c 8
+```
+
+![result](./images/stress.png)
+
+Then wait a few minutes and you'll get the results below, of a new instance created by the Auto Scaling group.
+
+![result](./images/scale%20activity.png)
+
+![result](./images/scale-instance.png)
+
 
