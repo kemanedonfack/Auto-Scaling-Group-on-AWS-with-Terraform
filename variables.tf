@@ -6,22 +6,22 @@ variable "inbound_ec2" {
 
 variable "instance_type" {
   type    = string
-  default = "t3.micro"
+  default = "t2.micro"
 }
 
 variable "ami" {
   type    = string
-  default = "ami-08766f81ab52792ce"
+  default = "ami-0940df33750ae6e7f"
 }
 
 variable "key_name" {
   type    = string
-  default = "kemane"
+  default = "wordpressKey"
 }
 
 variable "availability_zone" {
   type    = list(string)
-  default = ["eu-north-1a", "eu-north-1b"]
+  default = ["ca-central-1a", "ca-central-1b"]
 }
 
 variable "vpc_cidr" {
