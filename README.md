@@ -38,7 +38,7 @@ By incorporating the Auto Scaling Group into our infrastructure, we can achieve 
 
 The overall architecture looks like the following image in which the AWS Cloud Services are highlighted:
 
-![FeaturedImage](./images/infrastructure.png)
+![infrastruture](./images/infrastructure.png)
 
 ## Prerequisites
 
