@@ -55,7 +55,7 @@ Create a file named `provider.tf` with the following content:
 
 ```
 provider "aws" {
-  region = "ca-central-1"
+  region = "eu-north-1"
 }
 
 terraform {
