@@ -14,17 +14,17 @@ Before we dive into the deployment of our infrastructure, let's take a moment to
 
 An [Auto Scaling Group](https://aws.amazon.com/autoscaling/) is a fundamental component of AWS that allows you to automatically adjust the number of instances based on demand. It helps maintain application availability, distribute traffic evenly, and optimize resource utilization.
 
-When you configure an Auto Scaling Group, you define parameters such as the minimum and maximum number of instances to keep running, desired capacity, and scaling policies. AWS then automatically manages the instances, launching new ones or terminating existing ones as needed, based on the defined policies.
+When you configure an **Auto Scaling Group**, you define parameters such as the minimum and maximum number of instances to keep running, desired capacity, and scaling policies. AWS then automatically manages the instances, launching new ones or terminating existing ones as needed, based on the defined policies.
 
 ### How Does Auto Scaling Work?
 
-Auto Scaling uses metrics and policies to determine when to scale the number of instances. Metrics can include CPU utilization, network traffic, or custom metrics from Amazon CloudWatch. Based on these metrics, you can define scaling policies that specify how and when the Auto Scaling Group should add or remove instances.
+**Auto Scaling** uses metrics and policies to determine when to scale the number of instances. Metrics can include `CPU utilization`, `network traffic`, or custom metrics from `Amazon CloudWatch`. Based on these metrics, you can define scaling policies that specify how and when the **Auto Scaling Group** should add or remove instances.
 
 For example, you can set a scaling policy to add instances when CPU utilization exceeds a certain threshold and remove instances when it drops below a specific level. This dynamic scaling capability ensures that your applications can handle varying levels of traffic and resource demands, while also optimizing costs.
 
 ### The Role and Importance of Auto Scaling Group
 
-The Auto Scaling Group plays a crucial role in building resilient and elastic environments. Here's why it is essential:
+The **Auto Scaling Group** plays a crucial role in building resilient and elastic environments. Here's why it is essential:
 
 - **High Availability**: By distributing instances across multiple availability zones, the Auto Scaling Group ensures that if one zone becomes unavailable, your applications can continue running on instances in other zones. This helps minimize downtime and provides resilience against infrastructure failures.
 
@@ -44,9 +44,8 @@ The overall architecture looks like the following image in which the AWS Cloud S
 
 Before we begin, make sure you have the following prerequisites in place:
 
-- An AWS account with appropriate permissions to create and manage resources.
-- Terraform installed on your local machine. You can download it from the official Terraform website and follow the installation instructions for your operating system.
-
+- **An AWS account** with appropriate permissions to create and manage resources.
+- **Terraform installed** on your local machine. You can download it from the official Terraform website and follow the installation instructions for your operating system.
 
 **Important** : In this article, we will focus on the auto scaling group, so if you want to learn more about the `vpc.tf`, `variables.tf`, `security_group.tf`, `route_table.tf`, `provider.tf`, `outputs.tf`, loadbalancer.tf files, which will be created below, please refer to my previous article on [Deploy WordPress on a 2-Tier AWS Architecture with Terraform](https://blog.numericaideas.com/deploy-wordpress-2-tier-aws-architecture-with-terraform), where I explain the role of all these files in more detail. 
 
