@@ -411,7 +411,6 @@ Finally, let's check our infrastructure from the AWS Console:
 ![result](./images/result2.png)
 
 Now that our infrastructure is ready, let's test our Auto Scaling Group to see if it works as expected. To do this, connect via ssh to one of the two instances and type the command below: 
-
 ```
 stress -c 8
 ```
