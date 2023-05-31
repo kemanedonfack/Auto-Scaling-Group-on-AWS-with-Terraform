@@ -48,7 +48,7 @@ Before we begin, make sure you have the following prerequisites in place:
 - Terraform installed on your local machine. You can download it from the official Terraform website and follow the installation instructions for your operating system.
 
 
-**Important** : In this article, we will focus on the auto scaling group, so if you want to learn more about the `vpc.tf`, `variables.tf`, `security_group.tf`, `route_table.tf`, `provider.tf`, `outputs.tf`, loadbalancer.tf files, which will be created below, please refer to my previous article on (Deploy WordPress on a 2-Tier AWS Architecture with Terraform)[https://blog.numericaideas.com/deploy-wordpress-2-tier-aws-architecture-with-terraform], where I explain the role of all these files in more detail. 
+**Important** : In this article, we will focus on the auto scaling group, so if you want to learn more about the `vpc.tf`, `variables.tf`, `security_group.tf`, `route_table.tf`, `provider.tf`, `outputs.tf`, loadbalancer.tf files, which will be created below, please refer to my previous article on [Deploy WordPress on a 2-Tier AWS Architecture with Terraform](https://blog.numericaideas.com/deploy-wordpress-2-tier-aws-architecture-with-terraform), where I explain the role of all these files in more detail. 
 
 ### Step 1: Provider Configuration
 
