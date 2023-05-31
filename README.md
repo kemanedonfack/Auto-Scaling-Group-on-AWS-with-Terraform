@@ -423,4 +423,7 @@ Then wait a few minutes and you'll get the results below, of a new instance crea
 
 ![result](./images/scale-instance.png)
 
+## Conclusion
+
+To conclude, implementing an Auto Scaling Group on AWS with Terraform provides a flexible and efficient solution for managing application scalability. By leveraging Terraform's infrastructure-as-code capabilities, teams can easily handle workload fluctuations and optimize performance. Thorough research and careful configuration are crucial for achieving optimal results. Regular monitoring and adjustments ensure high availability and cost-effectiveness. Deploying an Auto Scaling Group with Terraform empowers teams to scale resources, improve performance, and leverage AWS's elastic infrastructure.
 
