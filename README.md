@@ -1,8 +1,10 @@
-# Building Resilient and Elastic Environments on AWS with Terraform
+# Auto Scaling Group on AWS with Terraform
 
 ## Introduction
 
 In today's digital landscape, building highly available and scalable infrastructure is crucial for ensuring the reliability and performance of applications. Amazon Web Services (AWS) provides a comprehensive suite of cloud services that enable organizations to build resilient and elastic environments. In this article, we will explore how to set up a highly available infrastructure on AWS using Terraform, a popular infrastructure-as-code tool.
+
+![FeaturedImage](./images/Auto%20Scaling%20Group%20on%20AWS%20with%20Terraform.png)
 
 ## Auto Scaling Group (ASG)
 
@@ -24,17 +26,19 @@ For example, you can set a scaling policy to add instances when CPU utilization 
 
 The Auto Scaling Group plays a crucial role in building resilient and elastic environments. Here's why it is essential:
 
-1. **High Availability**: By distributing instances across multiple availability zones, the Auto Scaling Group ensures that if one zone becomes unavailable, your applications can continue running on instances in other zones. This helps minimize downtime and provides resilience against infrastructure failures.
+- **High Availability**: By distributing instances across multiple availability zones, the Auto Scaling Group ensures that if one zone becomes unavailable, your applications can continue running on instances in other zones. This helps minimize downtime and provides resilience against infrastructure failures.
 
-2. **Scalability**: The Auto Scaling Group allows your infrastructure to scale up or down automatically based on demand. As traffic increases, the group adds more instances to handle the load, ensuring that your applications remain responsive and performant. Conversely, during periods of low demand, instances are scaled down to optimize resource utilization and reduce costs.
+- **Scalability**: The Auto Scaling Group allows your infrastructure to scale up or down automatically based on demand. As traffic increases, the group adds more instances to handle the load, ensuring that your applications remain responsive and performant. Conversely, during periods of low demand, instances are scaled down to optimize resource utilization and reduce costs.
 
-3. **Fault Tolerance**: If an instance within the Auto Scaling Group fails, the group automatically replaces it with a new instance. This self-healing capability helps maintain application availability and reduces the need for manual intervention.
+- **Fault Tolerance**: If an instance within the Auto Scaling Group fails, the group automatically replaces it with a new instance. This self-healing capability helps maintain application availability and reduces the need for manual intervention.
 
 By incorporating the Auto Scaling Group into our infrastructure, we can achieve a resilient and elastic environment that can handle fluctuations in traffic and resource demands effectively.
 
 ## Infrastructure Provisioning
 
 The overall architecture looks like the following image in which the AWS Cloud Services are highlighted:
+
+![FeaturedImage](./images/infrastructure.png)
 
 ## Prerequisites
 
